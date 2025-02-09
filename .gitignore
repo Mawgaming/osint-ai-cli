@@ -1,0 +1,38 @@
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore environment files
+venv/
+.env
+
+# Ignore OSINT API keys and settings
+config/settings.json
+
+# Ignore data storage (optional, comment out if you want to track results)
+#data/
+
+# Ignore logs and temporary files
+logs/
+*.log
+
+# Ignore test artifacts
+*.test
+*.tmp
+
+# Ignore VS Code settings (optional)
+# Ignore Visual Studio settings and files
+.vs/
+*.suo
+*.user
+*.cache
+*.pdb
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore built distributions
+/dist/
+/build/
+*.egg-info/

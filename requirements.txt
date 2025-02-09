@@ -1,0 +1,11 @@
+requests
+shodan
+fpdf
+pandas
+spacy
+nltk
+beautifulsoup4
+playwright
+scapy
+argparse
+unittest
