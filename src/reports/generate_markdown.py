@@ -1,24 +1,29 @@
-import json
+import os
+from datetime import datetime
 
-def generate_markdown_report(data, filename="osint_report.md"):
-    """Generates a Markdown report from OSINT analysis data."""
+def generate_markdown_report(data, folder="data/reports/"):
+    """Generates a Markdown report and saves it in the reports directory."""
+    os.makedirs(folder, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = os.path.join(folder, f"osint_report_{timestamp}.md")
+
     try:
         with open(filename, "w") as file:
             file.write("# OSINT Analysis Report\n\n")
             file.write(f"## Target: {data.get('target', 'N/A')}\n\n")
-            
+
             if "shodan" in data:
                 file.write("## Shodan Results\n")
                 file.write(f"Open Ports: {', '.join(map(str, data['shodan'].get('open_ports', [])))}\n\n")
-            
+
             if "virustotal" in data:
                 file.write("## VirusTotal Results\n")
                 file.write(f"Malicious: {data['virustotal'].get('malicious', 'N/A')}\n\n")
-            
+
             if "risk_analysis" in data:
                 file.write("## Risk Analysis\n")
                 file.write(f"Risk Level: {data['risk_analysis'].get('risk_level', 'N/A')}\n\n")
-            
+
         print(f"[INFO] Markdown report saved to {filename}")
     except Exception as e:
         print(f"[ERROR] Failed to save Markdown report: {e}")

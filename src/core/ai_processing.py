@@ -3,8 +3,13 @@ import json
 import requests
 import spacy
 from collections import defaultdict
+from datetime import datetime
+from src.core.data_manager import save_json
 from src.core.osint_scraper import run_osint_scan
 from src.core.risk_analysis import assess_risk
+from src.reports.generate_json import generate_json_report
+from src.reports.generate_markdown import generate_markdown_report
+from src.reports.generate_pdf import generate_pdf_report
 
 # Load English NLP model
 nlp = spacy.load("en_core_web_sm")
@@ -36,16 +41,23 @@ def extract_entities(text):
     return extracted_data
 
 def analyze_text_with_ai(text):
-    """Extracts entities, runs OSINT scans, and assesses risk."""
-    extracted_data = extract_entities(text)  # Step 1: Extract Entities
-    osint_results = run_osint_scan(extracted_data)  # Step 2: Run Scans
-    risk_report = assess_risk(osint_results)  # Step 3: Risk Assessment
+    """Extracts entities, runs OSINT scans, assesses risk, and generates reports."""
+    extracted_data = extract_entities(text)
+    osint_results = run_osint_scan(extracted_data)
+    risk_report = assess_risk(osint_results)
 
-    return {
+    final_result = {
         "extracted_data": extracted_data,
         "osint_results": osint_results,
         "risk_report": risk_report,
-}
+    }
+
+    # Generate reports in all formats
+    generate_json_report(final_result)
+    generate_markdown_report(final_result)
+    generate_pdf_report(final_result)
+
+    return final_result
 
 if __name__ == "__main__":
     sample_text = """

@@ -1,0 +1,1031 @@
+{
+    "extracted_data": {
+        "emails": [],
+        "ips": [
+            "8.8.8.8"
+        ],
+        "domains": [
+            "google.com"
+        ],
+        "cves": [
+            "CVE-2023-1234"
+        ],
+        "hashes": [],
+        "named_entities": {
+            "ORG": [
+                "IP",
+                "CVE-2023-1234"
+            ]
+        }
+    },
+    "osint_results": {
+        "shodan": {
+            "8.8.8.8": {
+                "region_code": "CA",
+                "tags": [],
+                "ip": 134744072,
+                "area_code": null,
+                "domains": [
+                    "dns.google"
+                ],
+                "hostnames": [
+                    "dns.google"
+                ],
+                "country_code": "US",
+                "org": "Google LLC",
+                "data": [
+                    {
+                        "asn": "AS15169",
+                        "hash": -553166942,
+                        "os": null,
+                        "timestamp": "2025-02-09T10:03:50.411206",
+                        "isp": "Google LLC",
+                        "transport": "tcp",
+                        "_shodan": {
+                            "region": "na",
+                            "module": "dns-tcp",
+                            "ptr": true,
+                            "options": {
+                                "hostname": "tri-statecomm.net",
+                                "scan": "06JRNgHQ8rS5Bahf"
+                            },
+                            "id": "b46f90b7-29c8-4555-accd-973ad1fae3c9",
+                            "crawler": "bf6916bc109e04abe5f2025b4e772ed568949ef1"
+                        },
+                        "hostnames": [
+                            "dns.google"
+                        ],
+                        "location": {
+                            "city": "Mountain View",
+                            "region_code": "CA",
+                            "area_code": null,
+                            "longitude": -122.0775,
+                            "latitude": 37.4056,
+                            "country_code": "US",
+                            "country_name": "United States"
+                        },
+                        "dns": {
+                            "software": null,
+                            "recursive": true,
+                            "resolver_id": null,
+                            "resolver_hostname": null
+                        },
+                        "ip": 134744072,
+                        "domains": [
+                            "dns.google"
+                        ],
+                        "org": "Google LLC",
+                        "data": "\nRecursion: enabled",
+                        "port": 53,
+                        "opts": {},
+                        "ip_str": "8.8.8.8"
+                    },
+                    {
+                        "asn": "AS15169",
+                        "hash": -553166942,
+                        "os": null,
+                        "timestamp": "2025-02-09T16:16:47.521784",
+                        "isp": "Google LLC",
+                        "transport": "udp",
+                        "_shodan": {
+                            "region": "na",
+                            "crawler": "2e7af73ce0fc1a9e2f157e1f350e69411c461cfc",
+                            "options": {},
+                            "module": "dns-udp",
+                            "id": "5c53b745-6661-4d35-b09f-49b81d914233"
+                        },
+                        "hostnames": [
+                            "dns.google"
+                        ],
+                        "location": {
+                            "city": "Mountain View",
+                            "region_code": "CA",
+                            "area_code": null,
+                            "longitude": -122.0775,
+                            "latitude": 37.4056,
+                            "country_code": "US",
+                            "country_name": "United States"
+                        },
+                        "dns": {
+                            "software": null,
+                            "recursive": true,
+                            "resolver_id": null,
+                            "resolver_hostname": null
+                        },
+                        "ip": 134744072,
+                        "domains": [
+                            "dns.google"
+                        ],
+                        "org": "Google LLC",
+                        "data": "\nRecursion: enabled",
+                        "port": 53,
+                        "opts": {
+                            "raw": "34ef81820001000000000000026964067365727665720000100003"
+                        },
+                        "ip_str": "8.8.8.8"
+                    },
+                    {
+                        "hash": -1837392440,
+                        "asn": "AS15169",
+                        "http": {
+                            "status": 200,
+                            "robots_hash": null,
+                            "redirects": [
+                                {
+                                    "host": "lm.orgadata.com",
+                                    "data": "HTTP/1.1 302 Found\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Allow-Origin: *\r\nLocation: https://dns.google/\r\nDate: Sun, 09 Feb 2025 16:11:37 GMT\r\nContent-Type: text/html; charset=UTF-8\r\nServer: HTTP server (unknown)\r\nContent-Length: 216\r\nX-XSS-Protection: 0\r\nX-Frame-Options: SAMEORIGIN\r\nAlt-Svc: h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000\r\n\r\n",
+                                    "location": "/"
+                                }
+                            ],
+                            "title_hash": 481067853,
+                            "securitytxt": null,
+                            "title": "Google Public DNS",
+                            "sitemap_hash": null,
+                            "robots": null,
+                            "dom_hash": -476789325,
+                            "headers_hash": 2072287827,
+                            "host": "dns.google",
+                            "html": "<!DOCTYPE html>\n<html lang=\"en\"> <head> <title>Google Public DNS</title>  <meta charset=\"UTF-8\"> <link href=\"/static/93dd5954/favicon.png\" rel=\"shortcut icon\" type=\"image/png\"> <link href=\"/static/e6eca759/matter.min.css\" rel=\"stylesheet\"> <link href=\"/static/f85675c0/shared.css\" rel=\"stylesheet\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">  <link href=\"/static/d05cd6ba/root.css\" rel=\"stylesheet\"> </head> <body> <span class=\"filler top\"></span>   <div class=\"logo\" title=\"Google Public DNS\"> <div class=\"logo-text\"><span>Public DNS</span></div> </div>  <form action=\"/query\" method=\"GET\">  <div class=\"row\"> <label class=\"matter-textfield-outlined\"> <input type=\"text\" name=\"name\" placeholder=\"&nbsp;\"> <span>DNS Name</span> <p class=\"help\"> Enter a domain (like example.com) or IP address (like 8.8.8.8 or 2001:4860:4860::8844) here. </p> </label> <button class=\"matter-button-contained matter-primary\" type=\"submit\">Resolve</button> </div> </form>  <span class=\"filler bottom\"></span> <footer class=\"row\"> <a href=\"https://developers.google.com/speed/public-dns\">Help</a> <a href=\"/cache\">Cache Flush</a> <span class=\"filler\"></span> <a href=\"https://developers.google.com/speed/public-dns/docs/using\"> Get Started with Google Public DNS </a> </footer>   <script nonce=\"cD5r7K7Njm3xKCGCBrWKLw\">document.forms[0].name.focus();</script> </body> </html>",
+                            "server_hash": -650751690,
+                            "location": "/",
+                            "components": {},
+                            "securitytxt_hash": null,
+                            "server": "scaffolding on HTTPServer2",
+                            "sitemap": null,
+                            "html_hash": 1181986959
+                        },
+                        "os": null,
+                        "timestamp": "2025-02-09T16:11:45.533312",
+                        "isp": "Google LLC",
+                        "transport": "tcp",
+                        "_shodan": {
+                            "region": "na",
+                            "module": "https",
+                            "ptr": true,
+                            "options": {
+                                "hostname": "lm.orgadata.com",
+                                "scan": "IdwEkMrDE3lCkt76"
+                            },
+                            "id": "b2baa741-be9e-42a6-9af2-e7d0524d3427",
+                            "crawler": "b81ea4b8a1b38c53a5ff8953966f886fc7f2b90b"
+                        },
+                        "ssl": {
+                            "chain_sha256": [
+                                "895516680cf0df9436ffcd09c15ae7ecb2c9ac2324a16ab96982a1ec8656f874",
+                                "e6fe22bf45e4f0d3b85c59e02c0f495418e1eb8d3210f788d48cd5e1cb547cd4",
+                                "3ee0278df71fa3c125c4cd487f01d774694e6fc57e0cd94c24efd769133918e5"
+                            ],
+                            "jarm": "29d3fd00029d29d00042d43d00041d598ac0c1012db967bb1ad0ff2491b3ae",
+                            "chain": [
+                                "-----BEGIN CERTIFICATE-----\nMIIFsjCCBJqgAwIBAgIRAKyIs7xWwBzyCQST6UZMfmowDQYJKoZIhvcNAQELBQAw\nOzELMAkGA1UEBhMCVVMxHjAcBgNVBAoTFUdvb2dsZSBUcnVzdCBTZXJ2aWNlczEM\nMAoGA1UEAxMDV1IyMB4XDTI1MDEyMDA4Mzc1OFoXDTI1MDQxNDA4Mzc1N1owFTET\nMBEGA1UEAxMKZG5zLmdvb2dsZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC\nggEBAIl9HZ/0xh+sYRZZM+6jlLlrDL6NJw3AQxJv4bXo8uLAi6Ro+uP3sleXgMsw\nvR0Rutc7yyjEIlQk/RDytCLNBzm9ejPlUpImUGM7WIPrH4z6FoJ1++awF9kL38pN\n+LsTee2hH2wS9Z7YNHX6XHBzvty/b1DRb7kRViPnNyX84EoGsgEqHOllQmTxfrsb\nQirCXQdhYuXJDMNU0xdhwi/n2GpYEfB0XA7WzXblV9zp3VBEnnszNJ1a0AF3oyOz\neykg7zeMTHvsYUi6PIxh4xBDpFKoosoSy43E6wswqEAjBm1AH8mylozPyGg7+4x6\napZPff+Bfl+8sdVSPzjQPcFpPdECAwEAAaOCAtUwggLRMA4GA1UdDwEB/wQEAwIF\noDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBQI\nCfsjP7NQOOwl6kCu+6dPXOw3KjAfBgNVHSMEGDAWgBTeGx7teRXUPjckwyG77DQ5\nbUKyMDBYBggrBgEFBQcBAQRMMEowIQYIKwYBBQUHMAGGFWh0dHA6Ly9vLnBraS5n\nb29nL3dyMjAlBggrBgEFBQcwAoYZaHR0cDovL2kucGtpLmdvb2cvd3IyLmNydDCB\nrAYDVR0RBIGkMIGhggpkbnMuZ29vZ2xlgg5kbnMuZ29vZ2xlLmNvbYIQKi5kbnMu\nZ29vZ2xlLmNvbYILODg4OC5nb29nbGWCEGRuczY0LmRucy5nb29nbGWHBAgICAiH\nBAgIBASHECABSGBIYAAAAAAAAAAAiIiHECABSGBIYAAAAAAAAAAAiESHECABSGBI\nYAAAAAAAAAAAZGSHECABSGBIYAAAAAAAAAAAAGQwEwYDVR0gBAwwCjAIBgZngQwB\nAgEwNgYDVR0fBC8wLTAroCmgJ4YlaHR0cDovL2MucGtpLmdvb2cvd3IyLzc1cjRa\neUEzdkEwLmNybDCCAQQGCisGAQQB1nkCBAIEgfUEgfIA8AB1AM8RVu7VLnyv84db\n2Wkum+kacWdKsBfsrAHSW3fOzDsIAAABlIMTfWMAAAQDAEYwRAIgEKvYkHAj2qdC\npRVrPgiDX0TuJHniMxm+Prffxj2ph74CICqUH2Iwdyjo3KpazyTkdVeb6IKCvpfa\nmAQXApLfo1y/AHcAouMK5EXvva2bfjjtR2d3U9eCW4SU1yteGyzEuVCkR+cAAAGU\ngxN9MQAABAMASDBGAiEAieHjPcKDWZVDTavQ1ASKAPoAJo67hcgdIC+sCLn1PHkC\nIQDqBErBqUww1A7XbqNf0NxXIM0BYlogQLuYI7HlPw3+vDANBgkqhkiG9w0BAQsF\nAAOCAQEAGoyxXPpl+hGQmPDCHfiXYufTQITXNuk+AkmEA7sDF3XXTswTKT6TJWHW\nD3uWU+Niocj+tzWxMPT4TmXyNUEMhKvcoAfhX8o1rkOmArSw6XeDJRGR+fUmENPN\nDKAsaYWfL+Yphf/CMac+2Hg1SYLJ240oHPbj9VUmDukIwpShTc5Nu6Ityw6PUEhp\nQ0hNUHQX2kJCCAa1PmCmaD9n47aSItRh6kKBKjeAogF1l2SaWHTrNRkEaeVSN/Dh\n2KSJd9cOocit5M6xGorFkGoFlX9/b3sOB5u0D70hd8ApTuah7etEaWvmQI7iCsz8\nk40Ms2TkoqX+qBOzTwctt3IsmM9VRw==\n-----END CERTIFICATE-----\n",
+                                "-----BEGIN CERTIFICATE-----\nMIIFCzCCAvOgAwIBAgIQf/AFoHxM3tEArZ1mpRB7mDANBgkqhkiG9w0BAQsFADBH\nMQswCQYDVQQGEwJVUzEiMCAGA1UEChMZR29vZ2xlIFRydXN0IFNlcnZpY2VzIExM\nQzEUMBIGA1UEAxMLR1RTIFJvb3QgUjEwHhcNMjMxMjEzMDkwMDAwWhcNMjkwMjIw\nMTQwMDAwWjA7MQswCQYDVQQGEwJVUzEeMBwGA1UEChMVR29vZ2xlIFRydXN0IFNl\ncnZpY2VzMQwwCgYDVQQDEwNXUjIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK\nAoIBAQCp/5x/RR5wqFOfytnlDd5GV1d9vI+aWqxG8YSau5HbyfsvAfuSCQAWXqAc\n+MGr+XgvSszYhaLYWTwO0xj7sfUkDSbutltkdnwUxy96zqhMt/TZCPzfhyM1IKji\naeKMTj+xWfpgoh6zySBTGYLKNlNtYE3pAJH8do1cCA8Kwtzxc2vFE24KT3rC8gIc\nLrRjg9ox9i11MLL7q8Ju26nADrn5Z9TDJVd06wW06Y613ijNzHoU5HEDy01hLmFX\nxRmpC5iEGuh5KdmyjS//V2pm4M6rlagplmNwEmceOuHbsCFx13ye/aoXbv4r+zgX\nFNFmp6+atXDMyGOBOozAKql2N87jAgMBAAGjgf4wgfswDgYDVR0PAQH/BAQDAgGG\nMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjASBgNVHRMBAf8ECDAGAQH/\nAgEAMB0GA1UdDgQWBBTeGx7teRXUPjckwyG77DQ5bUKyMDAfBgNVHSMEGDAWgBTk\nrysmcRorSCeFL1JmLO/wiRNxPjA0BggrBgEFBQcBAQQoMCYwJAYIKwYBBQUHMAKG\nGGh0dHA6Ly9pLnBraS5nb29nL3IxLmNydDArBgNVHR8EJDAiMCCgHqAchhpodHRw\nOi8vYy5wa2kuZ29vZy9yL3IxLmNybDATBgNVHSAEDDAKMAgGBmeBDAECATANBgkq\nhkiG9w0BAQsFAAOCAgEARXWL5R87RBOWGqtY8TXJbz3S0DNKhjO6V1FP7sQ02hYS\nTL8Tnw3UVOlIecAwPJQl8hr0ujKUtjNyC4XuCRElNJThb0Lbgpt7fyqaqf9/qdLe\nSiDLs/sDA7j4BwXaWZIvGEaYzq9yviQmsR4ATb0IrZNBRAq7x9UBhb+TV+PfdBJT\nDhEl05vc3ssnbrPCuTNiOcLgNeFbpwkuGcuRKnZc8d/KI4RApW//mkHgte8y0YWu\nryUJ8GLFbsLIbjL9uNrizkqRSvOFVU6xddZIMy9vhNkSXJ/UcZhjJY1pXAprffJB\nvei7j+Qi151lRehMCofa6WBmiA4fx+FOVsV2/7R6V2nyAiIJJkEd2nSi5SnzxJrl\nXdaqev3htytmOPvoKWa676ATL/hzfvDaQBEcXd2Ppvy+275W+DKcH0FBbX62xevG\niza3F4ydzxl6NJ8hk8R+dDXSqv1MbRT1ybB5W0k8878XSOjvmiYTDIfyc9acxVJr\nY/cykHipa+te1pOhv7wYPYtZ9orGBV5SGOJm4NrB3K1aJar0RfzxC3ikr7Dyc6Qw\nqDTBU39CluVIQeuQRgwG3MuSxl7zRERDRilGoKb8uY45JzmxWuKxrfwT/478JuHU\n/oTxUFqOl2stKnn7QGTq8z29W+GgBLCXSBxC9epaHM0myFH/FJlniXJfHeytWt0=\n-----END CERTIFICATE-----\n",
+                                "-----BEGIN CERTIFICATE-----\nMIIFYjCCBEqgAwIBAgIQd70NbNs2+RrqIQ/E8FjTDTANBgkqhkiG9w0BAQsFADBX\nMQswCQYDVQQGEwJCRTEZMBcGA1UEChMQR2xvYmFsU2lnbiBudi1zYTEQMA4GA1UE\nCxMHUm9vdCBDQTEbMBkGA1UEAxMSR2xvYmFsU2lnbiBSb290IENBMB4XDTIwMDYx\nOTAwMDA0MloXDTI4MDEyODAwMDA0MlowRzELMAkGA1UEBhMCVVMxIjAgBgNVBAoT\nGUdvb2dsZSBUcnVzdCBTZXJ2aWNlcyBMTEMxFDASBgNVBAMTC0dUUyBSb290IFIx\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAthECix7joXebO9y/lD63\nladAPKH9gvl9MgaCcfb2jH/76Nu8ai6Xl6OMS/kr9rH5zoQdsfnFl97vufKj6bwS\niV6nqlKr+CMny6SxnGPb15l+8Ape62im9MZaRw1NEDPjTrETo8gYbEvs/AmQ351k\nKSUjB6G00j0uYODP0gmHu81I8E3CwnqIiru6z1kZ1q+PsAewnjHxgsHA3y6mbWwZ\nDrXYfiYaRQM9sHmklCitD38m5agI/pboPGiUU+6DOogrFZYJsuB6jC511pzrp1Zk\nj5ZPaK49l8KEj8C8QMALXL32h7M1bKwYUH+E4EzNktMg6TO8UpmvMrUpsyUqtEj5\ncuHKZPfmghCN6J3Cioj6OGaK/GP5Afl4/Xtcd/p2h/rs37EOeZVXtL0m79YB0esW\nCruOC7XFxYpVq9Os6pFLKcwZpDIlTirxZUTQAs6qzkm06p98g7BAe+dDq6dso499\niYH6TKX/1Y7DzkvgtdizjkXPdsDtQCv9Uw+wp9U7DbGKogPeMa3Md+pvez7W35Ei\nEua++tgy/BBjFFFy3l3WFpO9KWgz7zpm7AeKJt8T11dleCfeXkkUAKIAf5qoIbap\nsZWwpbkNFhHax2xIPEDgfg1azVY80ZcFuctL7TlLnMQ/0lUTbiSw1nH69MG6zO0b\n9f6BQdgAmD06yK56mDcYBZUCAwEAAaOCATgwggE0MA4GA1UdDwEB/wQEAwIBhjAP\nBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBTkrysmcRorSCeFL1JmLO/wiRNxPjAf\nBgNVHSMEGDAWgBRge2YaRQ2XyolQL30EzTSo//z9SzBgBggrBgEFBQcBAQRUMFIw\nJQYIKwYBBQUHMAGGGWh0dHA6Ly9vY3NwLnBraS5nb29nL2dzcjEwKQYIKwYBBQUH\nMAKGHWh0dHA6Ly9wa2kuZ29vZy9nc3IxL2dzcjEuY3J0MDIGA1UdHwQrMCkwJ6Al\noCOGIWh0dHA6Ly9jcmwucGtpLmdvb2cvZ3NyMS9nc3IxLmNybDA7BgNVHSAENDAy\nMAgGBmeBDAECATAIBgZngQwBAgIwDQYLKwYBBAHWeQIFAwIwDQYLKwYBBAHWeQIF\nAwMwDQYJKoZIhvcNAQELBQADggEBADSkHrEoo9C0dhemMXoh6dFSPsjbdBZBiLg9\nNR3t5P+T4Vxfq7vqfM/b5A3Ri1fyJm9bvhdGaJQ3b2t6yMAYN/olUazsaL+yyEn9\nWprKASOshIArAoyZl+tJaox118fessmXn1hIVw41oeQa1v1vg4Fv74zPl6/AhSrw\n9U5pCZEt4Wi4wStz6dTZ/CLANx8LZh1J7QJVj2fhMtfTJr9w4z30Z209fOU0iOMy\n+qduBmpvvYuR7hZL6Dupszfnw0Skfths18dG9ZKb59UhvmaSGZRVbNQpsg3BZlvi\nd0lIKO2d1xozclOzgjXPYovJJIultzkMu34qQb9Sz/yilrbCgj8=\n-----END CERTIFICATE-----\n"
+                            ],
+                            "dhparams": null,
+                            "versions": [
+                                "-TLSv1",
+                                "-SSLv2",
+                                "-SSLv3",
+                                "-TLSv1.1",
+                                "TLSv1.2",
+                                "TLSv1.3"
+                            ],
+                            "acceptable_cas": [],
+                            "tlsext": [
+                                {
+                                    "id": 51,
+                                    "name": "key_share"
+                                },
+                                {
+                                    "id": 43,
+                                    "name": "supported_versions"
+                                }
+                            ],
+                            "alpn": [],
+                            "cert": {
+                                "sig_alg": "sha256WithRSAEncryption",
+                                "issued": "20250120083758Z",
+                                "expires": "20250414083757Z",
+                                "pubkey": {
+                                    "bits": 2048,
+                                    "type": "rsa"
+                                },
+                                "version": 2,
+                                "extensions": [
+                                    {
+                                        "critical": true,
+                                        "data": "\\x03\\x02\\x05\\xa0",
+                                        "name": "keyUsage"
+                                    },
+                                    {
+                                        "data": "0\\n\\x06\\x08+\\x06\\x01\\x05\\x05\\x07\\x03\\x01",
+                                        "name": "extendedKeyUsage"
+                                    },
+                                    {
+                                        "critical": true,
+                                        "data": "0\\x00",
+                                        "name": "basicConstraints"
+                                    },
+                                    {
+                                        "data": "\\x04\\x14\\x08\\t\\xfb#?\\xb3P8\\xec%\\xea@\\xae\\xfb\\xa7O\\\\\\xec7*",
+                                        "name": "subjectKeyIdentifier"
+                                    },
+                                    {
+                                        "data": "0\\x16\\x80\\x14\\xde\\x1b\\x1e\\xedy\\x15\\xd4>7$\\xc3!\\xbb\\xec49mB\\xb20",
+                                        "name": "authorityKeyIdentifier"
+                                    },
+                                    {
+                                        "data": "0J0!\\x06\\x08+\\x06\\x01\\x05\\x05\\x070\\x01\\x86\\x15http://o.pki.goog/wr20%\\x06\\x08+\\x06\\x01\\x05\\x05\\x070\\x02\\x86\\x19http://i.pki.goog/wr2.crt",
+                                        "name": "authorityInfoAccess"
+                                    },
+                                    {
+                                        "data": "0\\x81\\xa1\\x82\\ndns.google\\x82\\x0edns.google.com\\x82\\x10*.dns.google.com\\x82\\x0b8888.google\\x82\\x10dns64.dns.google\\x87\\x04\\x08\\x08\\x08\\x08\\x87\\x04\\x08\\x08\\x04\\x04\\x87\\x10 \\x01H`H`\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x88\\x88\\x87\\x10 \\x01H`H`\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x88D\\x87\\x10 \\x01H`H`\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00dd\\x87\\x10 \\x01H`H`\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00d",
+                                        "name": "subjectAltName"
+                                    },
+                                    {
+                                        "data": "0\\n0\\x08\\x06\\x06g\\x81\\x0c\\x01\\x02\\x01",
+                                        "name": "certificatePolicies"
+                                    },
+                                    {
+                                        "data": "0-0+\\xa0)\\xa0\\'\\x86%http://c.pki.goog/wr2/75r4ZyA3vA0.crl",
+                                        "name": "crlDistributionPoints"
+                                    },
+                                    {
+                                        "data": "\\x04\\x81\\xf2\\x00\\xf0\\x00u\\x00\\xcf\\x11V\\xee\\xd5.|\\xaf\\xf3\\x87[\\xd9i.\\x9b\\xe9\\x1aqgJ\\xb0\\x17\\xec\\xac\\x01\\xd2[w\\xce\\xcc;\\x08\\x00\\x00\\x01\\x94\\x83\\x13}c\\x00\\x00\\x04\\x03\\x00F0D\\x02 \\x10\\xab\\xd8\\x90p#\\xda\\xa7B\\xa5\\x15k>\\x08\\x83_D\\xee$y\\xe23\\x19\\xbe>\\xb7\\xdf\\xc6=\\xa9\\x87\\xbe\\x02 *\\x94\\x1fb0w(\\xe8\\xdc\\xaaZ\\xcf$\\xe4uW\\x9b\\xe8\\x82\\x82\\xbe\\x97\\xda\\x98\\x04\\x17\\x02\\x92\\xdf\\xa3\\\\\\xbf\\x00w\\x00\\xa2\\xe3\\n\\xe4E\\xef\\xbd\\xad\\x9b~8\\xedGgwS\\xd7\\x82[\\x84\\x94\\xd7+^\\x1b,\\xc4\\xb9P\\xa4G\\xe7\\x00\\x00\\x01\\x94\\x83\\x13}1\\x00\\x00\\x04\\x03\\x00H0F\\x02!\\x00\\x89\\xe1\\xe3=\\xc2\\x83Y\\x95CM\\xab\\xd0\\xd4\\x04\\x8a\\x00\\xfa\\x00&\\x8e\\xbb\\x85\\xc8\\x1d /\\xac\\x08\\xb9\\xf5<y\\x02!\\x00\\xea\\x04J\\xc1\\xa9L0\\xd4\\x0e\\xd7n\\xa3_\\xd0\\xdcW \\xcd\\x01bZ @\\xbb\\x98#\\xb1\\xe5?\\r\\xfe\\xbc",
+                                        "name": "ct_precert_scts"
+                                    }
+                                ],
+                                "fingerprint": {
+                                    "sha256": "895516680cf0df9436ffcd09c15ae7ecb2c9ac2324a16ab96982a1ec8656f874",
+                                    "sha1": "10270c7f001e3eff4adfeeb45734a37206c727a8"
+                                },
+                                "serial": 229337013120827834320661393789252566634,
+                                "issuer": {
+                                    "C": "US",
+                                    "CN": "WR2",
+                                    "O": "Google Trust Services"
+                                },
+                                "expired": false,
+                                "subject": {
+                                    "CN": "dns.google"
+                                }
+                            },
+                            "cipher": {
+                                "version": "TLSv1.3",
+                                "bits": 256,
+                                "name": "TLS_AES_256_GCM_SHA384"
+                            },
+                            "trust": {
+                                "revoked": false,
+                                "browser": null
+                            },
+                            "handshake_states": [
+                                "before SSL initialization",
+                                "SSLv3/TLS write client hello",
+                                "SSLv3/TLS read server hello",
+                                "TLSv1.3 read encrypted extensions",
+                                "SSLv3/TLS read server certificate",
+                                "TLSv1.3 read server certificate verify",
+                                "SSLv3/TLS read finished",
+                                "SSLv3/TLS write change cipher spec",
+                                "SSLv3/TLS write finished",
+                                "SSL negotiation finished successfully"
+                            ],
+                            "ja3s": "66e33336e3e99f75410126f42d44cc81",
+                            "ocsp": {}
+                        },
+                        "hostnames": [
+                            "dns.google"
+                        ],
+                        "location": {
+                            "city": "Mountain View",
+                            "region_code": "CA",
+                            "area_code": null,
+                            "longitude": -122.0775,
+                            "latitude": 37.4056,
+                            "country_code": "US",
+                            "country_name": "United States"
+                        },
+                        "ip": 134744072,
+                        "domains": [
+                            "dns.google"
+                        ],
+                        "org": "Google LLC",
+                        "data": "HTTP/1.1 200 OK\r\nContent-Security-Policy: object-src 'none';base-uri 'self';script-src 'nonce-cD5r7K7Njm3xKCGCBrWKLw' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/honest_dns/1_0;frame-ancestors 'none'\r\nStrict-Transport-Security: max-age=31536000; includeSubDomains; preload\r\nX-Content-Type-Options: nosniff\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Security-Policy-Report-Only: script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/ntdsgswbsc:55:0\r\nCross-Origin-Opener-Policy-Report-Only: same-origin; report-to=ntdsgswbsc:55:0\r\nReport-To: {\"group\":\"ntdsgswbsc:55:0\",\"max_age\":2592000,\"endpoints\":[{\"url\":\"https://csp.withgoogle.com/csp/report-to/scaffolding/ntdsgswbsc:55:0\"}],}\r\nDate: Sun, 09 Feb 2025 16:11:45 GMT\r\nServer: scaffolding on HTTPServer2\r\nX-XSS-Protection: 0\r\nX-Frame-Options: SAMEORIGIN\r\nAlt-Svc: h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000\r\nAccept-Ranges: none\r\nVary: Accept-Encoding\r\nTransfer-Encoding: chunked\r\n\r\n",
+                        "port": 443,
+                        "opts": {
+                            "vulns": [],
+                            "heartbleed": "2025/02/09 16:12:13 8.8.8.8:443 - SAFE\n"
+                        },
+                        "ip_str": "8.8.8.8"
+                    }
+                ],
+                "asn": "AS15169",
+                "city": "Mountain View",
+                "latitude": 37.4056,
+                "isp": "Google LLC",
+                "longitude": -122.0775,
+                "last_update": "2025-02-09T16:16:47.521784",
+                "country_name": "United States",
+                "ip_str": "8.8.8.8",
+                "os": null,
+                "ports": [
+                    443,
+                    53
+                ]
+            }
+        },
+        "virustotal": {
+            "8.8.8.8": {
+                "data": {
+                    "id": "8.8.8.8",
+                    "type": "ip_address",
+                    "links": {
+                        "self": "https://www.virustotal.com/api/v3/ip_addresses/8.8.8.8"
+                    },
+                    "attributes": {
+                        "as_owner": "GOOGLE",
+                        "last_modification_date": 1739141945,
+                        "crowdsourced_context": [
+                            {
+                                "details": "AsyncRAT botnet C2 server (confidence level: 100%)",
+                                "severity": "medium",
+                                "timestamp": 1694383565,
+                                "title": "ThreatFox IOCs for 2023-09-10",
+                                "source": "ArcSight Threat Intelligence"
+                            }
+                        ],
+                        "whois_date": 1736574307,
+                        "reputation": 545,
+                        "last_analysis_stats": {
+                            "malicious": 0,
+                            "suspicious": 0,
+                            "undetected": 31,
+                            "harmless": 63,
+                            "timeout": 0
+                        },
+                        "last_analysis_date": 1739126130,
+                        "jarm": "29d3fd00029d29d00042d43d00041d598ac0c1012db967bb1ad0ff2491b3ae",
+                        "tags": [],
+                        "country": "US",
+                        "last_analysis_results": {
+                            "Acronis": {
+                                "method": "blacklist",
+                                "engine_name": "Acronis",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "0xSI_f33d": {
+                                "method": "blacklist",
+                                "engine_name": "0xSI_f33d",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "Abusix": {
+                                "method": "blacklist",
+                                "engine_name": "Abusix",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "ADMINUSLabs": {
+                                "method": "blacklist",
+                                "engine_name": "ADMINUSLabs",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Axur": {
+                                "method": "blacklist",
+                                "engine_name": "Axur",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "Criminal IP": {
+                                "method": "blacklist",
+                                "engine_name": "Criminal IP",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "AILabs (MONITORAPP)": {
+                                "method": "blacklist",
+                                "engine_name": "AILabs (MONITORAPP)",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "AlienVault": {
+                                "method": "blacklist",
+                                "engine_name": "AlienVault",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "alphaMountain.ai": {
+                                "method": "blacklist",
+                                "engine_name": "alphaMountain.ai",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "AlphaSOC": {
+                                "method": "blacklist",
+                                "engine_name": "AlphaSOC",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "Antiy-AVL": {
+                                "method": "blacklist",
+                                "engine_name": "Antiy-AVL",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "ArcSight Threat Intelligence": {
+                                "method": "blacklist",
+                                "engine_name": "ArcSight Threat Intelligence",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "AutoShun": {
+                                "method": "blacklist",
+                                "engine_name": "AutoShun",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "benkow.cc": {
+                                "method": "blacklist",
+                                "engine_name": "benkow.cc",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Bfore.Ai PreCrime": {
+                                "method": "blacklist",
+                                "engine_name": "Bfore.Ai PreCrime",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "BitDefender": {
+                                "method": "blacklist",
+                                "engine_name": "BitDefender",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Bkav": {
+                                "method": "blacklist",
+                                "engine_name": "Bkav",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "Blueliv": {
+                                "method": "blacklist",
+                                "engine_name": "Blueliv",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Certego": {
+                                "method": "blacklist",
+                                "engine_name": "Certego",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Chong Lua Dao": {
+                                "method": "blacklist",
+                                "engine_name": "Chong Lua Dao",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "CINS Army": {
+                                "method": "blacklist",
+                                "engine_name": "CINS Army",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Cluster25": {
+                                "method": "blacklist",
+                                "engine_name": "Cluster25",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "CRDF": {
+                                "method": "blacklist",
+                                "engine_name": "CRDF",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "CSIS Security Group": {
+                                "method": "blacklist",
+                                "engine_name": "CSIS Security Group",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "Snort IP sample list": {
+                                "method": "blacklist",
+                                "engine_name": "Snort IP sample list",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "CMC Threat Intelligence": {
+                                "method": "blacklist",
+                                "engine_name": "CMC Threat Intelligence",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Cyan": {
+                                "method": "blacklist",
+                                "engine_name": "Cyan",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "Cyble": {
+                                "method": "blacklist",
+                                "engine_name": "Cyble",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "CyRadar": {
+                                "method": "blacklist",
+                                "engine_name": "CyRadar",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "DNS8": {
+                                "method": "blacklist",
+                                "engine_name": "DNS8",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Dr.Web": {
+                                "method": "blacklist",
+                                "engine_name": "Dr.Web",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Ermes": {
+                                "method": "blacklist",
+                                "engine_name": "Ermes",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "ESET": {
+                                "method": "blacklist",
+                                "engine_name": "ESET",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "ESTsecurity": {
+                                "method": "blacklist",
+                                "engine_name": "ESTsecurity",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "EmergingThreats": {
+                                "method": "blacklist",
+                                "engine_name": "EmergingThreats",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Emsisoft": {
+                                "method": "blacklist",
+                                "engine_name": "Emsisoft",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Forcepoint ThreatSeeker": {
+                                "method": "blacklist",
+                                "engine_name": "Forcepoint ThreatSeeker",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Fortinet": {
+                                "method": "blacklist",
+                                "engine_name": "Fortinet",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "G-Data": {
+                                "method": "blacklist",
+                                "engine_name": "G-Data",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "GCP Abuse Intelligence": {
+                                "method": "blacklist",
+                                "engine_name": "GCP Abuse Intelligence",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "Google Safebrowsing": {
+                                "method": "blacklist",
+                                "engine_name": "Google Safebrowsing",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "GreenSnow": {
+                                "method": "blacklist",
+                                "engine_name": "GreenSnow",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Gridinsoft": {
+                                "method": "blacklist",
+                                "engine_name": "Gridinsoft",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "Heimdal Security": {
+                                "method": "blacklist",
+                                "engine_name": "Heimdal Security",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Hunt.io Intelligence": {
+                                "method": "blacklist",
+                                "engine_name": "Hunt.io Intelligence",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "IPsum": {
+                                "method": "blacklist",
+                                "engine_name": "IPsum",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Juniper Networks": {
+                                "method": "blacklist",
+                                "engine_name": "Juniper Networks",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Kaspersky": {
+                                "method": "blacklist",
+                                "engine_name": "Kaspersky",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "Lionic": {
+                                "method": "blacklist",
+                                "engine_name": "Lionic",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Lumu": {
+                                "method": "blacklist",
+                                "engine_name": "Lumu",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "MalwarePatrol": {
+                                "method": "blacklist",
+                                "engine_name": "MalwarePatrol",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "MalwareURL": {
+                                "method": "blacklist",
+                                "engine_name": "MalwareURL",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "Malwared": {
+                                "method": "blacklist",
+                                "engine_name": "Malwared",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Netcraft": {
+                                "method": "blacklist",
+                                "engine_name": "Netcraft",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "OpenPhish": {
+                                "method": "blacklist",
+                                "engine_name": "OpenPhish",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Phishing Database": {
+                                "method": "blacklist",
+                                "engine_name": "Phishing Database",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "PhishFort": {
+                                "method": "blacklist",
+                                "engine_name": "PhishFort",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "PhishLabs": {
+                                "method": "blacklist",
+                                "engine_name": "PhishLabs",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "Phishtank": {
+                                "method": "blacklist",
+                                "engine_name": "Phishtank",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "PREBYTES": {
+                                "method": "blacklist",
+                                "engine_name": "PREBYTES",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "PrecisionSec": {
+                                "method": "blacklist",
+                                "engine_name": "PrecisionSec",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "Quick Heal": {
+                                "method": "blacklist",
+                                "engine_name": "Quick Heal",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Quttera": {
+                                "method": "blacklist",
+                                "engine_name": "Quttera",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "SafeToOpen": {
+                                "method": "blacklist",
+                                "engine_name": "SafeToOpen",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "Sansec eComscan": {
+                                "method": "blacklist",
+                                "engine_name": "Sansec eComscan",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "Scantitan": {
+                                "method": "blacklist",
+                                "engine_name": "Scantitan",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "SCUMWARE.org": {
+                                "method": "blacklist",
+                                "engine_name": "SCUMWARE.org",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Seclookup": {
+                                "method": "blacklist",
+                                "engine_name": "Seclookup",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "SecureBrain": {
+                                "method": "blacklist",
+                                "engine_name": "SecureBrain",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "Segasec": {
+                                "method": "blacklist",
+                                "engine_name": "Segasec",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "SOCRadar": {
+                                "method": "blacklist",
+                                "engine_name": "SOCRadar",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Sophos": {
+                                "method": "blacklist",
+                                "engine_name": "Sophos",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Spam404": {
+                                "method": "blacklist",
+                                "engine_name": "Spam404",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "StopForumSpam": {
+                                "method": "blacklist",
+                                "engine_name": "StopForumSpam",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Sucuri SiteCheck": {
+                                "method": "blacklist",
+                                "engine_name": "Sucuri SiteCheck",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "ThreatHive": {
+                                "method": "blacklist",
+                                "engine_name": "ThreatHive",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Threatsourcing": {
+                                "method": "blacklist",
+                                "engine_name": "Threatsourcing",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Trustwave": {
+                                "method": "blacklist",
+                                "engine_name": "Trustwave",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Underworld": {
+                                "method": "blacklist",
+                                "engine_name": "Underworld",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "URLhaus": {
+                                "method": "blacklist",
+                                "engine_name": "URLhaus",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "URLQuery": {
+                                "method": "blacklist",
+                                "engine_name": "URLQuery",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "Viettel Threat Intelligence": {
+                                "method": "blacklist",
+                                "engine_name": "Viettel Threat Intelligence",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "VIPRE": {
+                                "method": "blacklist",
+                                "engine_name": "VIPRE",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "VX Vault": {
+                                "method": "blacklist",
+                                "engine_name": "VX Vault",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "ViriBack": {
+                                "method": "blacklist",
+                                "engine_name": "ViriBack",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Webroot": {
+                                "method": "blacklist",
+                                "engine_name": "Webroot",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Yandex Safebrowsing": {
+                                "method": "blacklist",
+                                "engine_name": "Yandex Safebrowsing",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "ZeroCERT": {
+                                "method": "blacklist",
+                                "engine_name": "ZeroCERT",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "desenmascara.me": {
+                                "method": "blacklist",
+                                "engine_name": "desenmascara.me",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "malwares.com URL checker": {
+                                "method": "blacklist",
+                                "engine_name": "malwares.com URL checker",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "securolytics": {
+                                "method": "blacklist",
+                                "engine_name": "securolytics",
+                                "category": "harmless",
+                                "result": "clean"
+                            },
+                            "Xcitium Verdict Cloud": {
+                                "method": "blacklist",
+                                "engine_name": "Xcitium Verdict Cloud",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "zvelo": {
+                                "method": "blacklist",
+                                "engine_name": "zvelo",
+                                "category": "undetected",
+                                "result": "unrated"
+                            },
+                            "ZeroFox": {
+                                "method": "blacklist",
+                                "engine_name": "ZeroFox",
+                                "category": "undetected",
+                                "result": "unrated"
+                            }
+                        },
+                        "continent": "NA",
+                        "last_https_certificate": {
+                            "cert_signature": {
+                                "signature_algorithm": "sha256RSA",
+                                "signature": "1a8cb15cfa65fa119098f0c21df89762e7d34084d736e93e02498403bb031775d74ecc13293e932561d60f7b9653e362a1c8feb735b130f4f84e65f235410c84abdca007e15fca35ae43a602b4b0e97783251191f9f52610d3cd0ca02c69859f2fe62985ffc231a73ed878354982c9db8d281cf6e3f555260ee908c294a14dce4dbba22dcb0e8f50486943484d507417da42420806b53e60a6683f67e3b69222d461ea42812a3780a2017597649a5874eb35190469e55237f0e1d8a48977d70ea1c8ade4ceb11a8ac5906a05957f7f6f7b0e079bb40fbd2177c0294ee6a1edeb44696be6408ee20accfc938d0cb364e4a2a5fea813b34f072db7722c98cf5547"
+                            },
+                            "extensions": {
+                                "key_usage": [
+                                    "digitalSignature",
+                                    "keyEncipherment"
+                                ],
+                                "extended_key_usage": [
+                                    "serverAuth"
+                                ],
+                                "CA": false,
+                                "subject_key_identifier": "0809fb233fb35038ec25ea40aefba74f5cec372a",
+                                "authority_key_identifier": {
+                                    "keyid": "de1b1eed7915d43e3724c321bbec34396d42b230"
+                                },
+                                "ca_information_access": {
+                                    "OCSP": "http://o.pki.goog/wr2",
+                                    "CA Issuers": "http://i.pki.goog/wr2.crt"
+                                },
+                                "subject_alternative_name": [
+                                    "dns.google",
+                                    "dns.google.com",
+                                    "*.dns.google.com",
+                                    "8888.google",
+                                    "dns64.dns.google",
+                                    "8.8.8.8",
+                                    "8.8.4.4",
+                                    "2001:4860:4860::8888",
+                                    "2001:4860:4860::8844",
+                                    "2001:4860:4860::6464",
+                                    "2001:4860:4860::64"
+                                ],
+                                "certificate_policies": [
+                                    "2.23.140.1.2.1"
+                                ],
+                                "crl_distribution_points": [
+                                    "http://c.pki.goog/wr2/75r4ZyA3vA0.crl"
+                                ],
+                                "1.3.6.1.4.1.11129.2.4.2": "0481f200f0007500cf1156eed52e7caff3875bd9692e9be91a71674ab017ecac"
+                            },
+                            "validity": {
+                                "not_after": "2025-04-14 08:37:57",
+                                "not_before": "2025-01-20 08:37:58"
+                            },
+                            "size": 1462,
+                            "version": "V3",
+                            "public_key": {
+                                "algorithm": "RSA",
+                                "rsa": {
+                                    "modulus": "897d1d9ff4c61fac61165933eea394b96b0cbe8d270dc043126fe1b5e8f2e2c08ba468fae3f7b2579780cb30bd1d11bad73bcb28c4225424fd10f2b422cd0739bd7a33e552922650633b5883eb1f8cfa168275fbe6b017d90bdfca4df8bb1379eda11f6c12f59ed83475fa5c7073bedcbf6f50d16fb9115623e73725fce04a06b2012a1ce9654264f17ebb1b422ac25d076162e5c90cc354d31761c22fe7d86a5811f0745c0ed6cd76e557dce9dd50449e7b33349d5ad00177a323b37b2920ef378c4c7bec6148ba3c8c61e31043a452a8a2ca12cb8dc4eb0b30a84023066d401fc9b2968ccfc8683bfb8c7a6a964f7dff817e5fbcb1d5523f38d03dc1693dd1",
+                                    "exponent": "10001",
+                                    "key_size": 2048
+                                }
+                            },
+                            "thumbprint_sha256": "895516680cf0df9436ffcd09c15ae7ecb2c9ac2324a16ab96982a1ec8656f874",
+                            "thumbprint": "10270c7f001e3eff4adfeeb45734a37206c727a8",
+                            "serial_number": "ac88b3bc56c01cf2090493e9464c7e6a",
+                            "issuer": {
+                                "C": "US",
+                                "O": "Google Trust Services",
+                                "CN": "WR2"
+                            },
+                            "subject": {
+                                "CN": "dns.google"
+                            }
+                        },
+                        "last_https_certificate_date": 1739126434,
+                        "asn": 15169,
+                        "total_votes": {
+                            "harmless": 219,
+                            "malicious": 38
+                        },
+                        "whois": "NetRange: 8.8.8.0 - 8.8.8.255\nCIDR: 8.8.8.0/24\nNetName: GOGL\nNetHandle: NET-8-8-8-0-2\nParent: NET8 (NET-8-0-0-0-0)\nNetType: Direct Allocation\nOriginAS: \nOrganization: Google LLC (GOGL)\nRegDate: 2023-12-28\nUpdated: 2023-12-28\nRef: https://rdap.arin.net/registry/ip/8.8.8.0\nOrgName: Google LLC\nOrgId: GOGL\nAddress: 1600 Amphitheatre Parkway\nCity: Mountain View\nStateProv: CA\nPostalCode: 94043\nCountry: US\nRegDate: 2000-03-30\nUpdated: 2019-10-31\nComment: Please note that the recommended way to file abuse complaints are located in the following links. \nComment: \nComment: To report abuse and illegal activity: https://www.google.com/contact/\nComment: \nComment: For legal requests: http://support.google.com/legal \nComment: \nComment: Regards, \nComment: The Google Team\nRef: https://rdap.arin.net/registry/entity/GOGL\nOrgAbuseHandle: ABUSE5250-ARIN\nOrgAbuseName: Abuse\nOrgAbusePhone: +1-650-253-0000 \nOrgAbuseEmail: network-abuse@google.com\nOrgAbuseRef: https://rdap.arin.net/registry/entity/ABUSE5250-ARIN\nOrgTechHandle: ZG39-ARIN\nOrgTechName: Google LLC\nOrgTechPhone: +1-650-253-0000 \nOrgTechEmail: arin-contact@google.com\nOrgTechRef: https://rdap.arin.net/registry/entity/ZG39-ARIN\n",
+                        "regional_internet_registry": "ARIN",
+                        "network": "8.8.8.0/24"
+                    }
+                }
+            },
+            "google.com": {
+                "error": "VirusTotal scan failed",
+                "message": "404 Client Error: Not Found for url: https://www.virustotal.com/api/v3/ip_addresses/google.com"
+            }
+        }
+    },
+    "risk_report": {
+        "risk_level": "Low",
+        "details": [
+            "Shodan: 8.8.8.8 has 2 open ports."
+        ]
+    }
+}
