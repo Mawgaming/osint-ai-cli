@@ -1,42 +1,38 @@
 import json
 
-def assess_risk(data):
-    """Assess the risk level based on OSINT findings."""
+def assess_risk(osint_results):
+    """Assess risk based on Shodan and VirusTotal scan results."""
     risk_score = 0
     risk_factors = {
         "open_ports": 2,
         "vulnerabilities": 3,
         "malicious_activity": 5,
-        "exposed_credentials": 4,
+        "positive_detections": 4,  # VirusTotal malware detection
     }
-    
-    report = {
-        "risk_level": "Low",
-        "details": []
-    }
-    
-    if "open_ports" in data:
-        report["details"].append(f"Open ports detected: {len(data['open_ports'])}")
-        risk_score += len(data["open_ports"]) * risk_factors["open_ports"]
-    
-    if "vulnerabilities" in data:
-        report["details"].append(f"Known vulnerabilities found: {len(data['vulnerabilities'])}")
-        risk_score += len(data["vulnerabilities"]) * risk_factors["vulnerabilities"]
-    
-    if "malicious_activity" in data and data["malicious_activity"]:
-        report["details"].append("Malicious activity detected!")
-        risk_score += risk_factors["malicious_activity"]
-    
-    if "exposed_credentials" in data and data["exposed_credentials"]:
-        report["details"].append("Exposed credentials found!")
-        risk_score += risk_factors["exposed_credentials"]
-    
-    # Determine risk level
+
+    report = {"risk_level": "Low", "details": []}
+
+    # Process Shodan Results
+    for ip, shodan_data in osint_results.get("shodan", {}).items():
+        if "error" not in shodan_data:
+            open_ports = len(shodan_data.get("ports", []))
+            report["details"].append(f"Shodan: {ip} has {open_ports} open ports.")
+            risk_score += open_ports * risk_factors["open_ports"]
+
+    # Process VirusTotal Results
+    for target, vt_data in osint_results.get("virustotal", {}).items():
+        if "error" not in vt_data:
+            detections = vt_data.get("data", {}).get("attributes", {}).get("last_analysis_stats", {}).get("malicious", 0)
+            if detections > 0:
+                report["details"].append(f"VirusTotal: {target} flagged as malicious ({detections} detections).")
+                risk_score += detections * risk_factors["positive_detections"]
+
+    # Assign Risk Level
     if risk_score > 10:
         report["risk_level"] = "High"
     elif risk_score > 5:
         report["risk_level"] = "Medium"
-    
+
     return report
 
 if __name__ == "__main__":

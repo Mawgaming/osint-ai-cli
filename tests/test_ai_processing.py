@@ -9,17 +9,20 @@ class TestAIProcessing(unittest.TestCase):
                       "His company website is www.example.com and their server IP is 192.168.1.1."
         entities = extract_entities(sample_text)
         
-        self.assertIn("EMAIL", entities)
-        self.assertIn("IP", entities)
-        self.assertIn("ORG", entities)
+        self.assertIn("emails", entities)
+        self.assertIn("ips", entities)
+        self.assertIn("named_entities", entities)
+        self.assertTrue(any(entities["named_entities"].values()))
         
     def test_analyze_text_with_ai(self):
         """Test AI-powered text analysis."""
         sample_text = "Jane Smith's email is jane.smith@example.com and she works in San Francisco."
         analyzed_data = analyze_text_with_ai(sample_text)
         
-        self.assertIsInstance(analyzed_data, str)
-        self.assertIn("EMAIL", analyzed_data)
+        self.assertIsInstance(analyzed_data, dict)
+        self.assertIn("emails", analyzed_data)
+        self.assertIn("named_entities", analyzed_data)
+        self.assertTrue(any(analyzed_data["named_entities"].values()))
         
 if __name__ == "__main__":
     unittest.main()
