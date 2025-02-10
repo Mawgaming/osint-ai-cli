@@ -11,7 +11,7 @@ venv/
 config/settings.json
 
 # Ignore data storage (optional, comment out if you want to track results)
-#data/
+data/
 
 # Ignore logs and temporary files
 logs/

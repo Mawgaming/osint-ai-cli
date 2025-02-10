@@ -1,4 +1,4 @@
-import os
+﻿import os
 from datetime import datetime
 
 def generate_markdown_report(data, folder="data/reports/"):
@@ -10,19 +10,31 @@ def generate_markdown_report(data, folder="data/reports/"):
     try:
         with open(filename, "w") as file:
             file.write("# OSINT Analysis Report\n\n")
-            file.write(f"## Target: {data.get('target', 'N/A')}\n\n")
+            file.write(f"## Target: {data.get('extracted_data', {}).get('domains', ['N/A'])[0]}\n\n")
+            file.write(f"### Risk Level: **{data.get('risk_report', {}).get('risk_level', 'Unknown')}**\n\n")
 
-            if "shodan" in data:
-                file.write("## Shodan Results\n")
-                file.write(f"Open Ports: {', '.join(map(str, data['shodan'].get('open_ports', [])))}\n\n")
+            file.write("## Findings\n")
+            file.write(f"- **Identified IPs:** {', '.join(data.get('extracted_data', {}).get('ips', []))}\n")
+            file.write(f"- **Identified Domains:** {', '.join(data.get('extracted_data', {}).get('domains', []))}\n")
+            file.write(f"- **Detected CVEs:** {', '.join(data.get('extracted_data', {}).get('cves', []))}\n\n")
 
-            if "virustotal" in data:
-                file.write("## VirusTotal Results\n")
-                file.write(f"Malicious: {data['virustotal'].get('malicious', 'N/A')}\n\n")
+            file.write("## Shodan Results\n")
+            file.write("| IP Address | Details |\n")
+            file.write("|------------|---------|\n")
+            for ip, result in data.get("osint_results", {}).get("shodan", {}).items():
+                file.write(f"| {ip} | {result} |\n")
+            file.write("\n")
 
-            if "risk_analysis" in data:
-                file.write("## Risk Analysis\n")
-                file.write(f"Risk Level: {data['risk_analysis'].get('risk_level', 'N/A')}\n\n")
+            file.write("## VirusTotal Results\n")
+            file.write("| Target | Details |\n")
+            file.write("|--------|---------|\n")
+            for target, result in data.get("osint_results", {}).get("virustotal", {}).items():
+                file.write(f"| {target} | {result} |\n")
+            file.write("\n")
+
+            file.write("\n## Scan Summary\n")
+            for detail in data.get("risk_report", {}).get("details", []):
+                file.write(f"- {detail}\n")
 
         print(f"[INFO] Markdown report saved to {filename}")
     except Exception as e:
@@ -30,9 +42,18 @@ def generate_markdown_report(data, folder="data/reports/"):
 
 if __name__ == "__main__":
     sample_data = {
-        "target": "example.com",
-        "shodan": {"open_ports": [80, 443]},
-        "virustotal": {"malicious": False},
-        "risk_analysis": {"risk_level": "Low"}
+        "extracted_data": {
+            "domains": ["example.com"],
+            "ips": ["192.168.1.1"],
+            "cves": ["CVE-2023-1234"]
+        },
+        "osint_results": {
+            "shodan": {"192.168.1.1": "Open Ports: 80, 443"},
+            "virustotal": {"example.com": "No malicious activity detected"}
+        },
+        "risk_report": {
+            "risk_level": "Low",
+            "details": ["No immediate threats detected."]
+        }
     }
     generate_markdown_report(sample_data)
