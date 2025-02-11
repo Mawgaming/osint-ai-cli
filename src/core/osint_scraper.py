@@ -43,16 +43,18 @@ def virustotal_scan(target):
         return {"error": "VirusTotal scan failed", "message": str(e)}
 
 def run_osint_scan(extracted_data):
-    """Runs OSINT scans on extracted domains and IPs."""
+    """Runs OSINT scans only if valid targets exist."""
+    if not extracted_data.get("domains") and not extracted_data.get("ips"):
+        return {"shodan": {}, "virustotal": {}}
+
     results = {"shodan": {}, "virustotal": {}}
 
-    # Scan extracted IPs
     for ip in extracted_data.get("ips", []):
         results["shodan"][ip] = shodan_search(ip)
         results["virustotal"][ip] = virustotal_scan(ip)
 
-    # Scan extracted Domains
     for domain in extracted_data.get("domains", []):
         results["virustotal"][domain] = virustotal_scan(domain)
 
     return results
+

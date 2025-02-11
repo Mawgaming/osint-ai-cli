@@ -8,9 +8,12 @@ def generate_markdown_report(data, folder="data/reports/"):
     filename = os.path.join(folder, f"osint_report_{timestamp}.md")
 
     try:
+
+        domains = data.get("extracted_data", {}).get("domains", [])
+
         with open(filename, "w") as file:
             file.write("# OSINT Analysis Report\n\n")
-            file.write(f"## Target: {data.get('extracted_data', {}).get('domains', ['N/A'])[0]}\n\n")
+            file.write(f"## Target: {domains[0] if domains else 'N/A'}\n\n")
             file.write(f"### Risk Level: **{data.get('risk_report', {}).get('risk_level', 'Unknown')}**\n\n")
 
             file.write("## Findings\n")
@@ -37,6 +40,8 @@ def generate_markdown_report(data, folder="data/reports/"):
                 file.write(f"- {detail}\n")
 
         print(f"[INFO] Markdown report saved to {filename}")
+        return filename
+
     except Exception as e:
         print(f"[ERROR] Failed to save Markdown report: {e}")
 

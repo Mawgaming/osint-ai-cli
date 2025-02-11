@@ -1,4 +1,4 @@
-from fpdf import FPDF
+from fpdf import FPDF 
 import os
 from datetime import datetime
 
@@ -22,8 +22,9 @@ def generate_pdf_report(data, folder="data/reports/"):
         pdf.set_font("Times", style='B', size=14)
         pdf.cell(200, 10, "Target", ln=True)
         pdf.set_font("Times", size=12)
-        target = data.get('extracted_data', {}).get('domains', ['N/A'])[0]
-        pdf.cell(200, 10, target.encode('latin-1', 'ignore').decode('latin-1'), ln=True)
+        domains = data.get('extracted_data', {}).get('domains', [])
+        target = domains[0] if domains else "N/A"
+        pdf.cell(200, 10, target, ln=True)
         pdf.ln(5)
 
         # Risk Level
@@ -31,16 +32,16 @@ def generate_pdf_report(data, folder="data/reports/"):
         pdf.cell(200, 10, "Risk Level", ln=True)
         pdf.set_font("Times", size=12)
         risk_level = data.get("risk_report", {}).get("risk_level", "Unknown")
-        pdf.cell(200, 10, risk_level.encode('latin-1', 'ignore').decode('latin-1'), ln=True)
+        pdf.cell(200, 10, risk_level, ln=True)
         pdf.ln(10)
 
         # Findings
         pdf.set_font("Times", style='B', size=14)
         pdf.cell(200, 10, "Findings", ln=True)
         pdf.set_font("Times", size=12)
-        pdf.cell(200, 10, f"Identified IPs: {', '.join(data.get('extracted_data', {}).get('ips', [])).encode('latin-1', 'ignore').decode('latin-1')}", ln=True)
-        pdf.cell(200, 10, f"Identified Domains: {', '.join(data.get('extracted_data', {}).get('domains', [])).encode('latin-1', 'ignore').decode('latin-1')}", ln=True)
-        pdf.cell(200, 10, f"Detected CVEs: {', '.join(data.get('extracted_data', {}).get('cves', [])).encode('latin-1', 'ignore').decode('latin-1')}", ln=True)
+        pdf.cell(200, 10, f"Identified IPs: {', '.join(data.get('extracted_data', {}).get('ips', []))}", ln=True)
+        pdf.cell(200, 10, f"Identified Domains: {', '.join(domains)}", ln=True)
+        pdf.cell(200, 10, f"Detected CVEs: {', '.join(data.get('extracted_data', {}).get('cves', []))}", ln=True)
         pdf.ln(5)
 
         # Shodan Results
@@ -50,8 +51,8 @@ def generate_pdf_report(data, folder="data/reports/"):
         pdf.cell(100, 10, "IP Address", border=1, ln=False, align="C")
         pdf.cell(100, 10, "Details", border=1, ln=True, align="C")
         for ip, result in data.get("osint_results", {}).get("shodan", {}).items():
-            pdf.cell(100, 10, ip.encode('latin-1', 'ignore').decode('latin-1'), border=1, ln=False, align="C")
-            pdf.cell(100, 10, str(result).encode('latin-1', 'ignore').decode('latin-1'), border=1, ln=True, align="C")
+            pdf.cell(100, 10, ip, border=1, ln=False, align="C")
+            pdf.cell(100, 10, str(result), border=1, ln=True, align="C")
         pdf.ln(5)
 
         # VirusTotal Results
@@ -61,8 +62,8 @@ def generate_pdf_report(data, folder="data/reports/"):
         pdf.cell(100, 10, "Target", border=1, ln=False, align="C")
         pdf.cell(100, 10, "Details", border=1, ln=True, align="C")
         for target, result in data.get("osint_results", {}).get("virustotal", {}).items():
-            pdf.cell(100, 10, target.encode('latin-1', 'ignore').decode('latin-1'), border=1, ln=False, align="C")
-            pdf.cell(100, 10, str(result).encode('latin-1', 'ignore').decode('latin-1'), border=1, ln=True, align="C")
+            pdf.cell(100, 10, target, border=1, ln=False, align="C")
+            pdf.cell(100, 10, str(result), border=1, ln=True, align="C")
         pdf.ln(5)
 
         # Scan Summary
@@ -70,10 +71,11 @@ def generate_pdf_report(data, folder="data/reports/"):
         pdf.cell(200, 10, "Scan Summary", ln=True)
         pdf.set_font("Times", size=12)
         for detail in data.get("risk_report", {}).get("details", []):
-            pdf.cell(200, 10, f"- {detail}".encode('latin-1', 'ignore').decode('latin-1'), ln=True)
+            pdf.cell(200, 10, f"- {detail}", ln=True)
 
         pdf.output(filename)
         print(f"[INFO] PDF report saved to {filename}")
+        return filename
 
     except Exception as e:
         print(f"[ERROR] Failed to save PDF report: {e}")

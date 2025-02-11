@@ -7,9 +7,6 @@ from datetime import datetime
 from src.core.data_manager import save_json
 from src.core.osint_scraper import run_osint_scan
 from src.core.risk_analysis import assess_risk
-from src.reports.generate_json import generate_json_report
-from src.reports.generate_markdown import generate_markdown_report
-from src.reports.generate_pdf import generate_pdf_report
 
 # Load English NLP model
 nlp = spacy.load("en_core_web_sm")
@@ -41,10 +38,16 @@ def extract_entities(text):
     return extracted_data
 
 def analyze_text_with_ai(text):
-    """Extracts entities, runs OSINT scans, assesses risk, and generates reports."""
+    """Extracts entities, runs OSINT scans only if valid targets exist, assesses risk, and generates reports."""
     extracted_data = extract_entities(text)
-    osint_results = run_osint_scan(extracted_data)
-    risk_report = assess_risk(osint_results)
+
+    # Check if there are valid domains or IPs before running the scan
+    if extracted_data.get("domains") or extracted_data.get("ips"):
+        osint_results = run_osint_scan(extracted_data)
+        risk_report = assess_risk(osint_results)
+    else:
+        osint_results = {"shodan": {}, "virustotal": {}}
+        risk_report = {"risk_level": "Unknown", "details": ["No valid target found."]}
 
     final_result = {
         "extracted_data": extracted_data,
@@ -53,16 +56,12 @@ def analyze_text_with_ai(text):
     }
 
     # Generate reports in all formats
-    generate_json_report(final_result)
-    generate_markdown_report(final_result)
-    generate_pdf_report(final_result)
+    #generate_json_report(final_result)
+    #generate_markdown_report(final_result)
+    #generate_pdf_report(final_result)
 
     return final_result
 
 if __name__ == "__main__":
-    sample_text = """
-    John Doe's email is john.doe@example.com and his office is in New York.
-    His company website is www.example.com and their server IP is 192.168.1.1.
-    They are vulnerable to CVE-2023-1234. The system hash is 5d41402abc4b2a76b9719d911017c592.
-    """
-    print(analyze_text_with_ai(sample_text))
+    sample_text = input("Enter domain or IP: ")  # Ask for user input
+    print(json.dumps(analyze_text_with_ai(sample_text), indent=4))

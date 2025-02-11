@@ -9,9 +9,13 @@ def generate_json_report(data, folder="data/reports/"):
     filename = os.path.join(folder, f"osint_report_{timestamp}.json")
 
     try:
+
+        # Structure the data more cleanly
+        domains = data.get("extracted_data", {}).get("domains", [])
+
         # Structure the data more cleanly
         formatted_data = {
-            "Target": data.get("extracted_data", {}).get("domains", ["N/A"])[0],  # First domain as target
+            "Target": domains[0] if domains else "N/A",
             "Risk Level": data.get("risk_report", {}).get("risk_level", "Unknown"),
             "Findings": {
                 "Identified IPs": data.get("extracted_data", {}).get("ips", []),

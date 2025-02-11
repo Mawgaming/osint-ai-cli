@@ -10,22 +10,37 @@
     <div class="container mt-5">
         <h2 class="text-center">OSINT AI Scanner</h2>
 
-        <form method="POST" class="mt-4">
-            <div class="mb-3">
-                <input type="text" name="target" class="form-control" placeholder="Enter IP or Domain" required>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Scan</button>
+        <form method="POST">
+            <label for="target">Enter Domain/IP:</label>
+            <input type="text" name="target" required class="form-control">
+
+            <label for="format">Choose Report Format:</label>
+            <select name="format" class="form-select">
+                <option value="json">JSON</option>
+                <option value="md">Markdown</option>
+                <option value="pdf">PDF</option>
+            </select>
+
+            <button type="submit" class="btn btn-primary mt-3">Run Scan</button>
         </form>
 
         {% if error_message %}
         <div class="alert alert-danger mt-3">{{ error_message }}</div>
         {% endif %}
 
-        {% if results %}
+        {% if results and results != "None" %}
         <div class="mt-4">
             <h4>Scan Results:</h4>
             <pre class="bg-secondary p-3">{{ results | tojson(indent=2) }}</pre>
         </div>
+
+        {% if file_path %}
+        <div class="mt-3">
+            <a href="{{ url_for('main.download_file', filename=file_path.split('/')[-1]) }}" class="btn btn-success">
+                Download Report
+            </a>
+        </div>
+        {% endif %}
         {% endif %}
     </div>
 </body>
