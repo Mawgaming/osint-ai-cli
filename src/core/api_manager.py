@@ -1,37 +1,31 @@
-import json
 import os
+from dotenv import load_dotenv
 import logging
 
 # Configure logging
-logging.basicConfig(level=logging.ERROR, format="%(asctime)s - %(levelname)s - %(message)s")
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
-def get_settings_path():
-    """Get the absolute path to settings.json, ensuring it works in both CLI & Flask."""
-    base_dir = os.path.dirname(os.path.abspath(__file__))  # Current directory of api_manager.py
-    return os.path.join(base_dir, "..", "..", "config", "settings.json")  # Adjusted path
+# Load API keys from .env file
+load_dotenv()
 
-def load_api_keys():
-    """Loads API keys from the settings.json file safely."""
-    config_path = get_settings_path()
-
-    try:
-        with open(config_path, "r") as file:
-            return json.load(file)
-    except FileNotFoundError:
-        logging.error("[ERROR] Missing config/settings.json file! Please set up API keys.")
-        return {}
-    except json.JSONDecodeError:
-        logging.error("[ERROR] Invalid JSON format in settings.json!")
-        return {}
-
-# Load API keys once when module is imported
-API_KEYS = load_api_keys()
+# API keys dictionary (retrieved from environment variables)
+API_KEYS = {
+    "abuseipdb": os.getenv("ABUSEIPDB_API_KEY"),
+    "threatfox": os.getenv("THREATFOX_API_KEY"),
+    "shodan": os.getenv("SHODAN_API_KEY"),
+    "virustotal": os.getenv("VIRUSTOTAL_API_KEY"),
+    "breachdirectory": os.getenv("BREACHDIRECTORY_API_KEY"),  # X-RapidAPI BreachDirectory Key
+}
 
 def get_api_key(service_name):
     """Retrieve an API key dynamically based on the service name."""
-    return API_KEYS.get(f"{service_name}_api_key", None)
+    key = API_KEYS.get(service_name.lower(), None)
+    if not key:
+        logging.warning(f"[WARNING] API key for {service_name} is missing!")
+    return key
 
-# If run directly, print API key status
 if __name__ == "__main__":
-    print("Shodan API Key:", get_api_key("shodan"))
-    print("VirusTotal API Key:", get_api_key("virustotal"))
+    print("API Keys Loaded Securely:")
+    for key in API_KEYS:
+        status = "Loaded" if API_KEYS[key] else "Missing"
+        print(f"{key.capitalize()} Key: {status}")

@@ -4,7 +4,6 @@ __pycache__/
 *.pyo
 
 # Ignore environment files
-venv/
 .env
 
 # Ignore OSINT API keys and settings
