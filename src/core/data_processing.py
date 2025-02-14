@@ -9,9 +9,15 @@ def clean_data(raw_data):
     cleaned_data = {
         "domains": list(set(raw_data.get("domains", []))),
         "emails": list(set(raw_data.get("emails", []))),
-        "ip_addresses": list(set(raw_data.get("ip_addresses", []))),
+        "ips": list(set(raw_data.get("ips", []))),
+        "usernames": list(set(raw_data.get("usernames", []))),
         "vulnerabilities": raw_data.get("vulnerabilities", []),
-        "risk_level": raw_data.get("risk_level", "Unknown")
+        "risk_level": raw_data.get("risk_level", "Unknown"),
+        "darkweb": raw_data.get("darkweb", {}),
+        "social_media": raw_data.get("social_media", {}),
+        "passive_dns": raw_data.get("passive_dns", {}),
+        "whois": raw_data.get("whois", {}),
+        "reverse_image_search": raw_data.get("reverse_image_search", {})
     }
     return cleaned_data
 
